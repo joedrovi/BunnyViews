@@ -1,0 +1,17 @@
+
+span.active{
+    font-size: 14px;
+    padding: 0.2145em 0.429em;
+    margin: 0 0.286em 0 0;
+    background: #0C6B0D;
+    color: #ffffff;
+}
+
+span.inactive{
+    font-size: 14px;
+    padding: 0.2145em 0.429em;
+    margin: 0 0.286em 0 0;
+    background: #a90000;
+    color: #ffffff;
+}
+

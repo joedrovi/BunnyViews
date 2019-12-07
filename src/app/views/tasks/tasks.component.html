@@ -1,0 +1,11 @@
+<form [formGroup]="taskForm" (ngSubmit)="Upsert()" novalidate>
+    <input type="text" name="description" formControlName="description" >
+    <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+            <div *ngIf="f.description.errors.required">Title is required</div>
+        </div>
+    <input type="text" name="status" formControlName="state">
+    <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+            <div *ngIf="f.state.errors.required">Title is required</div>
+        </div>
+    <input type="submit" value="submit">
+</form>

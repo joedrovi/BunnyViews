@@ -1,0 +1,8 @@
+<form [formGroup]="userForm" (ngSubmit)="Upsert()" novalidate>
+
+    <input type="text" name="name" formControlName="name">
+    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required">A valid name is required</div>
+    </div>
+    <input type="submit" value="submit">
+</form>

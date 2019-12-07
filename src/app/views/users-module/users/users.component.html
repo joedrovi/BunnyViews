@@ -1,0 +1,60 @@
+<p-table [value]="users" [paginator]="true" [rows]="10" [responsive]="true" dataKey="id">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 3em"></th>
+            <th>Name</th>
+            <th>Active</th>
+            <th>edit</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user let-expanded="expanded">
+
+        <tr class="show-data">
+            <td>
+                <a [pRowToggler]="user" (click)="getTasks(expanded,user.id)">
+                    <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                </a>
+            </td>
+            <td>{{user?.name}}</td>
+            <td> <span [ngClass]="(user.active)? 'active' :'inactive'"> {{(user.active)?'active':'inactive'}} </span>
+            </td>
+            <td>
+                <button (click)="onEditUser(user.id)"><i class="pi pi-pencil
+                    "></i></button>
+                <button (click)="deleteUser(user.id)"> <i class="pi pi-user-minus"></i>
+                </button>
+
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-user>
+        <tr>
+            <td [attr.colspan]='4'>
+                add new task
+
+                <button (click)="editTask(user.id)"><i class="pi pi-pencil
+                    "></i></button>
+
+                <p-table [value]="user.tasks">
+
+                    <ng-template pTemplate="body" let-task>
+        <tr>
+            <td>{{task.description}}</td>
+            <td>{{task.state}}</td>
+            <td>
+                <button (click)="editTask(user.id,task.id)"><i class="pi pi-pencil
+                        "></i></button>
+                <button (click)="deleteTask(user.id,task.id)"><i class="pi pi-trash
+                            "></i></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+</td>
+</tr>
+</ng-template>
+</p-table>
+<button pButton (click)="onEditUser()" type="button" label="Add User" icon="pi pi-user-plus" iconPos="right"
+    class="ui-button-rounded"></button>
+
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
