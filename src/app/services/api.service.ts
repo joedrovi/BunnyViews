@@ -8,8 +8,8 @@ import { HttpClient , HttpHeaders } from '@angular/common/http';
 export class ApiService {
 
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-  private urlUserApi = 'http://localhost:3000';
-  private urlTaskApi = 'http://localhost:3001';
+  private urlUserApi = 'https://jorgeerv-bt-userapi.herokuapp.com';
+  private urlTaskApi = 'https://jorgeerv-bt-taskapi.herokuapp.com';
 
   constructor(
     private http: HttpClient
