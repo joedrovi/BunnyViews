@@ -1,11 +1,14 @@
 <form [formGroup]="taskForm" (ngSubmit)="Upsert()" novalidate>
     <input type="text" name="description" formControlName="description" >
     <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
-            <div *ngIf="f.description.errors.required">Title is required</div>
+            <div *ngIf="f.description.errors.required">Description is required</div>
         </div>
-    <input type="text" name="status" formControlName="state">
+    <select formControlName="state">
+    <option value="true">Done</option>
+    <option selected="selected" value="false">To Do</option>
+    </select>
     <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
-            <div *ngIf="f.state.errors.required">Title is required</div>
-        </div>
+        <div *ngIf="f.state.errors.required">Title is required</div>
+    </div>
     <input type="submit" value="submit">
 </form>

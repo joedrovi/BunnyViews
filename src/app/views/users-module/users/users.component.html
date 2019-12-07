@@ -40,7 +40,7 @@
                     <ng-template pTemplate="body" let-task>
         <tr>
             <td>{{task.description}}</td>
-            <td>{{task.state}}</td>
+            <td><span [ngClass]="(task.state)? 'active' :'inactive'"> {{(task.state)?'Done':'To Do'}} </span></td>
             <td>
                 <button (click)="editTask(user.id,task.id)"><i class="pi pi-pencil
                         "></i></button>
