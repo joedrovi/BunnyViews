@@ -3,18 +3,17 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { from } from 'rxjs';
-import { ViewsComponent } from './views/views.component';
-import {ApiService} from './services/api.service'
+import { AppComponent } from './app.component'; 
+import {ApiService} from './services/api.service'; 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ViewsComponent
+    AppComponent, 
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
