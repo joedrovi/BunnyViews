@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +8,8 @@ import { HttpClient , HttpHeaders } from '@angular/common/http';
 export class ApiService {
 
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-  private urlUserApi = 'https://jorgeerv-bt-userapi.herokuapp.com';
-  private urlTaskApi = 'https://jorgeerv-bt-taskapi.herokuapp.com';
+  private urlUserApi = environment.urlUserApi;
+  private urlTaskApi = environment.urlTaskApi;
 
   constructor(
     private http: HttpClient
